@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ex01</title>
+</head>
+<body>
+
+<?php
+        $valores = array(); // Cria um vetor para armazenar os valores aleatórios
+
+
+        for ($i = 0; $i < 20; $i++) { // Vai gerar os valores aleatorios entre 100 e 200
+            $valores[$i] = rand(100, 200);
+        }
+
+        // Mostrando os valores ao usuário
+        echo "Valores gerados: ";
+        for ($i = 0; $i < count($valores); $i++) {
+            echo $valores[$i];
+            if ($i < count($valores) - 1) {
+                echo ", ";
+            }
+        }
+        echo "<br>";
+
+
+        $maior = $valores[0]; // Supondo que o primeiro valor seja o maior inicialmente
+        for ($i = 1; $i < count($valores); $i++) {
+            if ($valores[$i] > $maior) {
+                $maior = $valores[$i];
+            }
+        }
+        echo "Maior valor: $maior<br>";
+
+
+        $menor = $valores[0]; // Supondo que o primeiro valor seja o menor inicialmente
+        for ($i = 1; $i < count($valores); $i++) {
+            if ($valores[$i] < $menor) {
+                $menor = $valores[$i];
+            }
+        }
+        echo "Menor valor: $menor<br>";
+
+        // Calculando a média 
+        $soma = 0;
+        for ($i = 0; $i < count($valores); $i++) {
+            $soma += $valores[$i];
+        }
+        $media = $soma / count($valores);
+        echo "Média dos valores: $media<br>";
+
+        // Calculando a soma dos valores
+        echo "Soma dos valores: $soma<br>";
+        ?>
+
+            <a href="ex01.php"> Reiniciar o programa <br>
+            <a href="index.php"> Retornar para o menu inicial <br>
+
+</body>
+</html>
